@@ -1,0 +1,33 @@
+name: Pinterest URL Audit
+description: Audit and normalize Pinterest URLs in text files without network requests.
+author: SavePinner contributors
+branding:
+  icon: link
+  color: purple
+inputs:
+  paths:
+    description: Multiline glob patterns for files to audit.
+    required: false
+    default: |
+      **/*.md
+      **/*.mdx
+      **/*.txt
+      **/*.json
+      **/*.jsonl
+      **/*.csv
+      **/*.yaml
+      **/*.yml
+      !**/node_modules/**
+      !**/dist/**
+  fail-on-invalid:
+    description: Fail the workflow when invalid Pinterest-like URLs are found.
+    required: false
+    default: "false"
+outputs:
+  valid-count:
+    description: Number of valid Pinterest URLs found.
+  invalid-count:
+    description: Number of invalid Pinterest-like URLs found.
+runs:
+  using: node24
+  main: dist/index.js
