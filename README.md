@@ -2,7 +2,7 @@
 
 A GitHub Action that finds Pinterest URLs in repository text files, validates their hosts and paths, and suggests canonical forms. It runs locally inside the workflow and makes no network requests.
 
-[SavePinner](https://savepinner.com/pinterest-downloader/) maintains the parser used by this action.
+The team behind the [Pinterest image downloader](https://savepinner.com) maintains the parser used by this action.
 
 ## Usage
 
